@@ -1,0 +1,11 @@
+{
+    "users": [
+        {
+            "id": "60dea4ed-27e0-4275-ac69-19f64fa10fab",
+            "username": "rogerwa11",
+            "hashed_password": "$argon2id$v=19$m=65536,t=3,p=4$4zwHIETI+d/7/3/POce4Nw$MOwuexkBpmXh0FNnMwaDMWRGFx6NaJLOFv1o0D4g8b8",
+            "full_name": "roger wallace",
+            "created_at": "2025-11-26T15:49:14.534653"
+        }
+    ]
+}
