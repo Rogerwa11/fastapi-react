@@ -58,7 +58,7 @@ A full-stack mono-repo application developed as a personal study project, combin
 │   │   ├── services/
 │   │   └── validation/
 │   └── tailwind.config.js
-└── package.json (scripts para rodar os dois lados)
+└── package.json (scripts to run both sides)
 ```
 
 ## 🚀 How to Run
