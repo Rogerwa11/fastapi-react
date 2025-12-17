@@ -1,39 +1,39 @@
 # fastapi-react
 
-Aplicação full-stack mono-repo desenvolvida como projeto pessoal de estudos, combinando **FastAPI** no backend e **React + Vite** no frontend. O objetivo é praticar autenticação JWT, boas práticas de organização em camadas e um fluxo moderno de interface com Tailwind CSS e validação com Zod.
+A full-stack mono-repo application developed as a personal study project, combining FastAPI on the backend and React + Vite on the frontend. The goal is to practice JWT authentication, layered architecture best practices, and a modern UI flow with Tailwind CSS and Zod validation.
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- Registro e login de usuários com **JWT** e expiração configurável.
-- Persistência simplificada em arquivo JSON para facilitar testes locais.
-- Hash de senhas seguro com **passlib** (`bcrypt_sha256`).
-- Fluxo de autenticação completo com proteção de rotas e estado global no frontend.
-- Formulários com validação reativa usando **Zod**.
-- Estilização responsiva com **Tailwind CSS**.
+- User registration and login with JWT and configurable expiration.
+- Simplified JSON file persistence for easy local testing.
+- Secure password hashing with **passlib** (`bcrypt_sha256`).
+- Complete authentication flow with protected routes and global frontend state.
+- Reactive forms with validation using **Zod**.
+- Responsive styling with **Tailwind CSS**.
 
-## 🧱 Tecnologias & Técnicas
+## 🧱 Technologies & Techniques
 
 ### Backend
-- **FastAPI** com roteamento modular e `APIRouter`.
-- **pydantic-settings** para centralizar configurações.
-- **python-jose** para criação/validação de tokens JWT.
-- **passlib** (`CryptContext`) para hashing de senhas.
-- Serviços e camadas (`database`, `models`, `schemas`, `services`, `routes`) separadas para manter o domínio organizado.
-- Cobertura de testes com **pytest** e `TestClient`.
+- **FastAPI** with modular routing and `APIRouter`.
+- **pydantic-settings** for centralized configuration.
+- **python-jose** for JWT token creation/validation.
+- **passlib** (`CryptContext`) for password hashing.
+- Separation of concerns (`database`, `models`, `schemas`, `services`, `routes`) to keep the domain organized.
+- Test coverage with **pytest** and `TestClient`.
 
 ### Frontend
-- **React 18** com **TypeScript** e bundler **Vite**.
-- **React Router v7** para rotas públicas e protegidas.
-- **Tailwind CSS** como base de estilos utilitários.
-- **Zod** + hooks customizados para validação e feedbacks de formulário.
-- **Axios** configurado com interceptors para manipular tokens JWT.
-- Context API (`AuthContext`) para controle de sessão, login automático e refresh.
+- **React 18** with **TypeScript** and **Vite** bundler.
+- **React Router v7** for public and protected routes.
+- **Tailwind CSS** as the utility-first styling foundation.
+- **Zod** + custom hooks for validation and form feedback.
+- **Axios** configured with interceptors to handle JWT tokens.
+- Context API (`AuthContext`) for session control, auto-login, and refresh logic.
 
-### Outras práticas
-- Scripts unificados via **concurrently** para subir backend e frontend com um único comando.
-- Estrutura de diretórios espelhada (`backend/` e `frontend/`) para facilitar manutenção.
+### Other Practices
+- Unified scripts via **concurrently** to run backend and frontend with a single command.
+- Mirrored directory structure (`backend/` and `frontend/`) for easier maintenance.
 
-## 📁 Estrutura resumida
+## 📁 Folder Structure
 
 ```
 .
@@ -61,9 +61,9 @@ Aplicação full-stack mono-repo desenvolvida como projeto pessoal de estudos, c
 └── package.json (scripts para rodar os dois lados)
 ```
 
-## 🚀 Como executar
+## 🚀 How to Run
 
-### Pré-requisitos
+### Prerequisites
 - Python 3.11+
 - Node.js 20+
 - `pip`, `npm`
@@ -84,18 +84,18 @@ npm install
 npm run dev
 ```
 
-### 3. Rodar tudo com um único comando
-Na raiz do projeto há um `package.json` com um script que utiliza **concurrently**:
+### 3. Run everything with a single command
+In the project root, there is a `package.json` with a script that uses **concurrently**:
 ```bash
-npm install      # instala apenas o concurrently listado na raiz
-npm run dev      # executa uvicorn e o Vite em paralelo
+npm install      # installs only the concurrently package listed in the root
+npm run dev      # runs uvicorn and Vite in parallel
 ```
 
-## 🔐 Variáveis de ambiente
+## 🔐 Environment Variables
 
 ### Backend (`backend/.env`)
 ```
-SECRET_KEY=chave-super-secreta
+SECRET_KEY=super-secret-key
 ```
 
 ### Frontend (`frontend/.env.local`)
@@ -103,31 +103,31 @@ SECRET_KEY=chave-super-secreta
 VITE_API_URL=http://127.0.0.1:8000
 ```
 
-## 🧪 Testes
+## 🧪 Tests
 
 - Backend (pytest):
   ```bash
   cd backend
   pytest
   ```
-- O frontend pode ser testado manualmente acessando `http://localhost:5173` após `npm run dev`.
+- The frontend can be tested manually by accessing `http://localhost:5173` after running `npm run dev`.
 
-## 🗺️ Rotas principais
+## 🗺️ Main Routes
 
-- `POST /auth/register` – cria usuário.
-- `POST /auth/login` – retorna token JWT (JSON).
-- `GET /auth/me` – informações do usuário autenticado.
+- `POST /auth/register` – create user.
+- `POST /auth/login` – returns JWT token (JSON).
+- `GET /auth/me` – get authenticated user info.
 - Frontend:
-  - `/login` – entrada de usuário.
-  - `/register` – cadastro.
-  - `/dashboard` – rota protegida, exibe dados do perfil.
+  - `/login` – user login page.
+  - `/register` – registration page.
+  - `/dashboard` – protected route, displays profile data.
 
 ## 📌 Observações
 
-- Persistência atual é baseada em arquivo JSON para simplificar o aprendizado; em produção, substituir por um banco real.
-- O código foi organizado para facilitar substituições futuras (por exemplo, adicionar refresh tokens ou integrações com bancos).
-- Sinta-se à vontade para forkar e experimentar novas features.
+- Current persistence is based on a JSON file to simplify learning; for production, replace this with a real database.
+- The code is organized to facilitate future replacements (e.g., adding refresh tokens or database integrations).
+- Feel free to fork and experiment with new features.
 
 ---
 
-Projeto criado para aprendizado pessoal. Feedbacks e sugestões são sempre bem-vindos!
+Project created for personal learning. Feedback and suggestions are always welcome!
